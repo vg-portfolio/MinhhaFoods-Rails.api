@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TOKEN="BAhJIiVjNjRhYTAxZmRhN2I4NWFjZTUyOGI0Zjk2ODdjOTdkZAY6BkVG--0cfa4bc4b3a055aff49f06702ebbf5021cd8f772"
-TEXT="History USSSS"
+TEXT="History"
 DES="History description goes here"
 
 API="${API_ORIGIN:-http://localhost:4741}"
