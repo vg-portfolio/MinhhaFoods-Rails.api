@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  resources :why_us
   resources :awards
   resources :histories
   resources :about_sections
