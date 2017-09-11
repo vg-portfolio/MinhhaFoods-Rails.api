@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170911210235) do
+ActiveRecord::Schema.define(version: 20170911211653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,18 @@ ActiveRecord::Schema.define(version: 20170911210235) do
     t.index ["about_section_id"], name: "index_histories_on_about_section_id", unique: true, using: :btree
   end
 
+  create_table "news_posts", force: :cascade do |t|
+    t.text     "title",           null: false
+    t.text     "titleVn"
+    t.text     "description",     null: false
+    t.text     "descriptionVn"
+    t.date     "newsDate"
+    t.integer  "news_section_id", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["news_section_id"], name: "index_news_posts_on_news_section_id", using: :btree
+  end
+
   create_table "news_sections", force: :cascade do |t|
     t.text     "title",         null: false
     t.text     "titleVn"
@@ -92,6 +104,7 @@ ActiveRecord::Schema.define(version: 20170911210235) do
   add_foreign_key "awards", "about_sections"
   add_foreign_key "examples", "users"
   add_foreign_key "histories", "about_sections"
+  add_foreign_key "news_posts", "news_sections"
   add_foreign_key "news_sections", "users"
   add_foreign_key "why_us", "about_sections"
 end

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  resources :news_posts, except: [:new, :edit]
+
   resources :news_sections, except: [:new, :edit, :update]
   patch '/news_sections' => 'news_sections#update'
 
