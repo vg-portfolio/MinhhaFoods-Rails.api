@@ -15,7 +15,8 @@ class AboutSectionsController < OpenReadController
 
   # POST /about_sections
   def create
-    @about_section = current_user.about_section.new(about_section_params)
+    #create_about_section creates a single record
+    @about_section = current_user.create_about_section(about_section_params)
 
     if @about_section.save
       render json: @about_section, status: :created, location: @about_section
@@ -46,6 +47,6 @@ class AboutSectionsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def about_section_params
-      params.require(:about_section).permit(:title, :titleVn, :description, :descriptionVn)
+      params.require(:about_sections).permit(:title, :titleVn, :description, :descriptionVn)
     end
 end

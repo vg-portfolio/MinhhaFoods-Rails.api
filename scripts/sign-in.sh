@@ -1,5 +1,7 @@
 #!/bin/bash
 
+EMAIL="vince@gmail.com"
+PASSWORD="qwer"
 API="${API_ORIGIN:-http://localhost:4741}"
 URL_PATH="/sign-in"
 curl "${API}${URL_PATH}" \
