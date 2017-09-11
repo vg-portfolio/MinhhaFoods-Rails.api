@@ -3,15 +3,15 @@ class AboutSectionsController < OpenReadController
 
   # GET /about_sections
   def index
-    @about_sections = AboutSection.all
+    @about_sections = AboutSection.first
 
     render json: @about_sections
   end
 
   # GET /about_sections/1
-  def show
-    render json: @about_section
-  end
+  # def show
+  #   render json: @about_section
+  # end
 
   # POST /about_sections
   def create
@@ -42,7 +42,7 @@ class AboutSectionsController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_about_section
-      @about_section = AboutSection.find(params[:id])
+      @about_section = AboutSection.first
     end
 
     # Only allow a trusted parameter "white list" through.
