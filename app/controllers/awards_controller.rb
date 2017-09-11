@@ -16,7 +16,7 @@ class AwardsController < OpenReadController
   # POST /awards
   def create
     @aboutSection = AboutSection.first
-    @award = @aboutSection.create(award_params)
+    @award = @aboutSection.awards.create(award_params)
 
     if @award.save
       render json: @award, status: :created, location: @award
@@ -47,6 +47,6 @@ class AwardsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def award_params
-      params.require(:award).permit(:title, :titleVn, :description, :descriptionVn)
+      params.require(:awards).permit(:title, :titleVn, :description, :descriptionVn)
     end
 end
