@@ -16,7 +16,7 @@ class WhyUsController < OpenReadController
   # POST /why_us
   def create
     @aboutSection = AboutSection.first
-    @why_u = @aboutSection.create_why_us(why_u_params)
+    @why_u = @aboutSection.create_why_u(why_u_params)
 
     if @why_u.save
       render json: @why_u, status: :created, location: @why_u
@@ -47,6 +47,6 @@ class WhyUsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def why_u_params
-      params.require(:why_u).permit(:title, :titleVn, :description, :descriptionVn)
+      params.require(:why_us).permit(:title, :titleVn, :description, :descriptionVn)
     end
 end
