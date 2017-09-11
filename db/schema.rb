@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170911163120) do
+ActiveRecord::Schema.define(version: 20170911172757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,17 @@ ActiveRecord::Schema.define(version: 20170911163120) do
     t.index ["user_id"], name: "index_examples_on_user_id", using: :btree
   end
 
+  create_table "histories", force: :cascade do |t|
+    t.text     "title",            null: false
+    t.text     "titleVn"
+    t.text     "description",      null: false
+    t.text     "descriptionVn"
+    t.integer  "about_section_id", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["about_section_id"], name: "index_histories_on_about_section_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
     t.string   "token",           null: false
@@ -46,4 +57,5 @@ ActiveRecord::Schema.define(version: 20170911163120) do
 
   add_foreign_key "about_sections", "users"
   add_foreign_key "examples", "users"
+  add_foreign_key "histories", "about_sections"
 end
