@@ -15,8 +15,8 @@ class HistoriesController < OpenReadController
 
   # POST /histories
   def create
-    @user = current_user
-    @aboutSection = current_user.about_section.first
+    # @user = current_user
+    @aboutSection = AboutSection.first
     @history = @aboutSection.create_history(history_params)
 
     if @history.save
