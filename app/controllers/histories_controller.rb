@@ -3,15 +3,15 @@ class HistoriesController < OpenReadController
 
   # GET /histories
   def index
-    @histories = History.all
+    @histories = History.first
 
     render json: @histories
   end
 
   # GET /histories/1
-  def show
-    render json: @history
-  end
+  # def show
+  #   render json: @history
+  # end
 
   # POST /histories
   def create
@@ -43,7 +43,7 @@ class HistoriesController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_history
-      @history = History.find(params[:id])
+      @history = History.first
     end
 
     # Only allow a trusted parameter "white list" through.

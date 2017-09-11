@@ -3,20 +3,20 @@ class WhyUsController < OpenReadController
 
   # GET /why_us
   def index
-    @why_us = WhyU.all
+    @why_us = WhyU.first
 
     render json: @why_us
   end
 
   # GET /why_us/1
-  def show
-    render json: @why_u
-  end
+  # def show
+  #   render json: @why_u
+  # end
 
   # POST /why_us
   def create
-    @aboutSection = AboutSection.first
-    @why_u = @aboutSection.create_why_u(why_u_params)
+    @about_section = AboutSection.first
+    @why_u = @about_section.create_why_u(why_u_params)
 
     if @why_u.save
       render json: @why_u, status: :created, location: @why_u
@@ -42,7 +42,7 @@ class WhyUsController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_why_u
-      @why_u = WhyU.find(params[:id])
+      @why_u = WhyU.first
     end
 
     # Only allow a trusted parameter "white list" through.
