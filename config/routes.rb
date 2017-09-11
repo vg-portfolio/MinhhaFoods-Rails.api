@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  resources :product_categories
   resources :product_sections, except: [:new, :edit, :update]
   patch '/product_sections' => 'product_sections#update'
 

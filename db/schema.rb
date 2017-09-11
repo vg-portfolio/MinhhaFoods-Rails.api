@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170911214538) do
+ActiveRecord::Schema.define(version: 20170911215925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,17 @@ ActiveRecord::Schema.define(version: 20170911214538) do
     t.index ["user_id"], name: "index_news_sections_on_user_id", unique: true, using: :btree
   end
 
+  create_table "product_categories", force: :cascade do |t|
+    t.text     "catType",            null: false
+    t.text     "catTypeVn"
+    t.text     "description",        null: false
+    t.text     "descriptionVn"
+    t.integer  "product_section_id", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["product_section_id"], name: "index_product_categories_on_product_section_id", using: :btree
+  end
+
   create_table "product_sections", force: :cascade do |t|
     t.text     "title",         null: false
     t.text     "titleVn"
@@ -117,6 +128,7 @@ ActiveRecord::Schema.define(version: 20170911214538) do
   add_foreign_key "histories", "about_sections"
   add_foreign_key "news_posts", "news_sections"
   add_foreign_key "news_sections", "users"
+  add_foreign_key "product_categories", "product_sections"
   add_foreign_key "product_sections", "users"
   add_foreign_key "why_us", "about_sections"
 end
