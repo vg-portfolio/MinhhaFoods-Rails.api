@@ -7,7 +7,7 @@ class CreateAwards < ActiveRecord::Migration[5.0]
       t.text :descriptionVn
       t.references :about_section, index: true, foreign_key: true, null: false
 
-      t.timestamps, null: false
+      t.timestamps null: false
     end
   end
 end
