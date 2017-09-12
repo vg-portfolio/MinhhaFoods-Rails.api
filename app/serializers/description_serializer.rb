@@ -1,3 +1,5 @@
 class DescriptionSerializer < ActiveModel::Serializer
-  attributes :id, :body, :describable
+  attributes :id, :body
+
+  belongs_to :describable
 end
