@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170911222356) do
+ActiveRecord::Schema.define(version: 20170911224326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 20170911222356) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["about_section_id"], name: "index_awards_on_about_section_id", using: :btree
+  end
+
+  create_table "descriptions", force: :cascade do |t|
+    t.text     "body"
+    t.string   "describable_type"
+    t.integer  "describable_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["describable_type", "describable_id"], name: "index_descriptions_on_describable_type_and_describable_id", using: :btree
   end
 
   create_table "examples", force: :cascade do |t|
