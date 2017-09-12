@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170911224326) do
+ActiveRecord::Schema.define(version: 20170912033045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,16 @@ ActiveRecord::Schema.define(version: 20170911224326) do
     t.datetime "updated_at",       null: false
     t.integer  "about_section_id", null: false
     t.index ["about_section_id"], name: "index_histories_on_about_section_id", unique: true, using: :btree
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.text     "body"
+    t.text     "BodyVn"
+    t.string   "ingredientable_type"
+    t.integer  "ingredientable_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["ingredientable_type", "ingredientable_id"], name: "index_ingredients_on_ingredientable_type_and_ingredientable_id", using: :btree
   end
 
   create_table "news_posts", force: :cascade do |t|
