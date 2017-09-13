@@ -48,6 +48,8 @@ class IngredientsController < ApplicationController
     def set_ingredientable
       if params[:product_id]
         @ingredientable = Product.find(params[:product_id])
+      elsif params[:dish_id]
+        @ingredientable = Dish.find(params[:dish_id])
       end
     end
 

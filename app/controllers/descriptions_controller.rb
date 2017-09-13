@@ -47,6 +47,8 @@ class DescriptionsController < OpenReadController
     def set_describable
       if params[:product_id]
         @describable = Product.find(params[:product_id])
+      elsif params[:dish_id]
+        @describable = Dish.find(params[:dish_id])
       end
     end
 

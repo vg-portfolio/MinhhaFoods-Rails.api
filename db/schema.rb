@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170913173736) do
+ActiveRecord::Schema.define(version: 20170913185057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,17 @@ ActiveRecord::Schema.define(version: 20170913173736) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["describable_type", "describable_id"], name: "index_descriptions_on_describable_type_and_describable_id", using: :btree
+  end
+
+  create_table "dishes", force: :cascade do |t|
+    t.text     "title",       null: false
+    t.text     "titleVn"
+    t.date     "dishDate"
+    t.text     "youtubeLink"
+    t.integer  "category_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_dishes_on_category_id", using: :btree
   end
 
   create_table "examples", force: :cascade do |t|
@@ -167,6 +178,7 @@ ActiveRecord::Schema.define(version: 20170913173736) do
   add_foreign_key "about_sections", "users"
   add_foreign_key "awards", "about_sections"
   add_foreign_key "chef_sections", "users"
+  add_foreign_key "dishes", "categories"
   add_foreign_key "examples", "users"
   add_foreign_key "histories", "about_sections"
   add_foreign_key "news_posts", "news_sections"
