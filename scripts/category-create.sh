@@ -1,18 +1,19 @@
 #!/bin/bash
 
-TOKEN="BAhJIiVjNjRhYTAxZmRhN2I4NWFjZTUyOGI0Zjk2ODdjOTdkZAY6BkVG--0cfa4bc4b3a055aff49f06702ebbf5021cd8f772"
-TEXT="category 1"
+TOKEN="BAhJIiU1NTEyOGE0ZTVkNjkzMDMxZDc4NGIxNzA5NGRjMTg5ZgY6BkVG--e31e175fe206b922fdecf1d002cd72aee0c058ef"
+ID="1"
+TEXT="NEW CATEGORY"
 DES="category description goes here"
 
 API="${API_ORIGIN:-http://localhost:4741}"
-URL_PATH="/product_categories"
+URL_PATH="/product_sections/${ID}/categories"
 curl "${API}${URL_PATH}" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=$TOKEN" \
   --data '{
-    "product_category": {
+    "category": {
       "catType": "'"${TEXT}"'",
       "description": "'"${DES}"'"
     }

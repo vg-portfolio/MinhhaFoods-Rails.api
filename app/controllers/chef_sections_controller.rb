@@ -3,8 +3,7 @@ class ChefSectionsController < OpenReadController
 
   # GET /chef_sections
   def index
-    @chef_sections = ChefSection.all
-
+    @chef_sections = ChefSection.first
     render json: @chef_sections
   end
 

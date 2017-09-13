@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
 
+  #Polymporphic models
+  resources :categories
   resources :ingredients
   resources :descriptions
 
@@ -9,12 +11,17 @@ Rails.application.routes.draw do
     resources :ingredients
   end
 
-  resources :product_categories
 
-  resources :chef_sections, except: [:new, :edit, :update]
+  resources :chef_sections, except: [:new, :edit, :update] do
+    resources :categories
+  end
+
   patch '/chef_sections' => 'chef_sections#update'
 
-  resources :product_sections, except: [:new, :edit, :update]
+  resources :product_sections, except: [:new, :edit, :update] do
+    resources :categories
+  end
+
   patch '/product_sections' => 'product_sections#update'
 
   resources :news_posts, except: [:new, :edit]
