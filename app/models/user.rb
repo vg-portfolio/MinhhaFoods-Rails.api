@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_one :news_section
   has_one :product_section
   has_one :chef_section
+  has_one :contact
   has_many :examples
 
 end

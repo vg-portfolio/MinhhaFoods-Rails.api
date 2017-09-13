@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
 
+  resources :inquiries
+  resources :contacts
 ###### Product Section #######
   resources :product_sections, except: [:new, :edit, :update] do
     resources :categories

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170913185057) do
+ActiveRecord::Schema.define(version: 20170913201550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,24 @@ ActiveRecord::Schema.define(version: 20170913185057) do
     t.index ["user_id"], name: "index_chef_sections_on_user_id", unique: true, using: :btree
   end
 
+  create_table "contacts", force: :cascade do |t|
+    t.text     "title"
+    t.text     "titleVn"
+    t.text     "description"
+    t.text     "descriptionVn"
+    t.text     "companyName"
+    t.text     "companyNameVn"
+    t.integer  "tel"
+    t.integer  "hotline"
+    t.integer  "fax"
+    t.text     "addess"
+    t.text     "fbLink"
+    t.integer  "user_id",       null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["user_id"], name: "index_contacts_on_user_id", unique: true, using: :btree
+  end
+
   create_table "descriptions", force: :cascade do |t|
     t.text     "body"
     t.string   "describable_type"
@@ -107,6 +125,17 @@ ActiveRecord::Schema.define(version: 20170913185057) do
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.index ["ingredientable_type", "ingredientable_id"], name: "index_ingredients_on_ingredientable_type_and_ingredientable_id", using: :btree
+  end
+
+  create_table "inquiries", force: :cascade do |t|
+    t.text     "firstName",                  null: false
+    t.text     "lastName",                   null: false
+    t.text     "email",                      null: false
+    t.text     "message"
+    t.boolean  "seen",       default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["email"], name: "index_inquiries_on_email", unique: true, using: :btree
   end
 
   create_table "news_posts", force: :cascade do |t|
@@ -178,6 +207,7 @@ ActiveRecord::Schema.define(version: 20170913185057) do
   add_foreign_key "about_sections", "users"
   add_foreign_key "awards", "about_sections"
   add_foreign_key "chef_sections", "users"
+  add_foreign_key "contacts", "users"
   add_foreign_key "dishes", "categories"
   add_foreign_key "examples", "users"
   add_foreign_key "histories", "about_sections"
