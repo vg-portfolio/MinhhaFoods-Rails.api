@@ -1,24 +1,3 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
-
-# rails-api-template
-
-A template for starting projects with `rails-api`. Includes authentication.
-
-At the beginning of each cohort, update the versions in [`Gemfile`](Gemfile).
-
-## Dependencies
-
-Install with `bundle install`.
-
--   [`rails-api`](https://github.com/rails-api/rails-api)
--   [`rails`](https://github.com/rails/rails)
--   [`active_model_serializers`](https://github.com/rails-api/active_model_serializers)
--   [`ruby`](https://www.ruby-lang.org/en/)
--   [`postgres`](http://www.postgresql.org)
-
-Until Rails 5 is released, this template should follow the most recent released
-version of Rails 4, as well as track `master` branches for `rails-api` and
-`active_model_serializers`.
 
 ## Installation
 
@@ -45,38 +24,9 @@ version of Rails 4, as well as track `master` branches for `rails-api` and
     db:nuke_pave`.
 1.  Run the API server with `bin/rails server` or `bundle exec rails server`.
 
-## Structure
-
-This template follows the standard project structure in Rails 4.
-
-`curl` command scripts are stored in [`scripts`](scripts) with names that
-correspond to API actions.
-
-User authentication is built-in.
-
-## Tasks
-
-Developers should run these often!
-
--   `bin/rake routes` lists the endpoints available in your API.
--   `bin/rake test` runs automated tests.
--   `bin/rails console` opens a REPL that pre-loads the API.
--   `bin/rails db` opens your database client and loads the correct database.
--   `bin/rails server` starts the API.
--   `scripts/*.sh` run various `curl` commands to test the API. See below.
-
-<!-- TODO -   `rake nag` checks your code style. -->
-<!-- TODO -   `rake lint` checks your code for syntax errors. -->
-
 ## API
 
-Use this as the basis for your own API documentation. Add a new third-level
-heading for your custom entities, and follow the pattern provided for the
-built-in user authentication documentation.
 
-Scripts are included in [`scripts`](scripts) to test built-in actions. Add your
-own scripts to test your custom API. As an alternative, you can write automated
-tests in RSpec to test your API.
 
 ### Authentication
 
@@ -274,6 +224,29 @@ Content-Type: application/json; charset=utf-8
   }
 }
 ```
+
+#### GET collection of main resources
+## No authorization required
+  ### /chef_sections
+  ### /categories
+  ### /dishes
+  ### /products
+  ### /product_sections
+  ### /about_sections
+  ### /news_sections
+  ### /contacts
+
+## Authorization required
+  ### /inquiries
+  Request:
+  ```sh
+  API="${API_ORIGIN:-http://localhost:4741}"
+  URL_PATH="/inquiries"
+  curl "${API}${URL_PATH}" \
+    --include \
+    --request GET \
+    --header "Authorization: Token token=$TOKEN"
+  ```
 
 ### Reset Database without dropping
 
