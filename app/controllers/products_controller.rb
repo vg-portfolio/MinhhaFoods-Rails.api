@@ -5,7 +5,7 @@ class ProductsController < OpenReadController
   def index
     @products = Product.all
 
-    render json: @products
+    render json: @products.includes([:ingredients, :descriptions]), include: ['ingredients', 'descriptions']
   end
 
   # GET /products/1

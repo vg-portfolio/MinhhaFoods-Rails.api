@@ -1,11 +1,11 @@
-class DishesController < ApplicationController
+class DishesController < OpenReadController
   before_action :set_dish, only: [:show, :update, :destroy]
 
   # GET /dishes
   def index
     @dishes = Dish.all
 
-    render json: @dishes
+    render json: @dishes.includes([:ingredients, :descriptions]), include: ['ingredients', 'descriptions']
   end
 
   # GET /dishes/1

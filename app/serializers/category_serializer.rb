@@ -1,5 +1,5 @@
 class CategorySerializer < ActiveModel::Serializer
-  attributes :id, :catType, :catTypeVn, :description, :descriptionVn, :categorizable_type
+  attributes :id, :catType, :catTypeVn, :description, :descriptionVn, :categorizable_type, :products, :dishes
 
   #Displays array of products AND dishes belonging to this category
   has_many :products
