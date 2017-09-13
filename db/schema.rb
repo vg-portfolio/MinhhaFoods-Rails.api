@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 20170913201550) do
 
   create_table "descriptions", force: :cascade do |t|
     t.text     "body"
+    t.text     "bodyVn"
     t.string   "describable_type"
     t.integer  "describable_id"
     t.datetime "created_at",       null: false

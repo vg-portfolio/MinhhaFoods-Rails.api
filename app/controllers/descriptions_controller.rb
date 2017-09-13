@@ -54,6 +54,6 @@ class DescriptionsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def description_params
-      params.require(:description).permit(:body, :describable)
+      params.require(:description).permit(:body, :bodyVn, :describable)
     end
 end

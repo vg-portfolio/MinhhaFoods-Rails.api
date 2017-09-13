@@ -5,7 +5,6 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.text :titleVn
       t.integer :volume
       t.boolean :metric
-      t.references :product_category, index: true, foreign_key: true, null: false
 
       t.timestamps null:false
     end
