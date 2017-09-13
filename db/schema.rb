@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170912033045) do
+ActiveRecord::Schema.define(version: 20170912203100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,17 @@ ActiveRecord::Schema.define(version: 20170912033045) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["about_section_id"], name: "index_awards_on_about_section_id", using: :btree
+  end
+
+  create_table "chef_sections", force: :cascade do |t|
+    t.text     "title",         null: false
+    t.text     "titleVn"
+    t.text     "description",   null: false
+    t.text     "descriptionVn"
+    t.integer  "user_id",       null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["user_id"], name: "index_chef_sections_on_user_id", unique: true, using: :btree
   end
 
   create_table "descriptions", force: :cascade do |t|
@@ -154,6 +165,7 @@ ActiveRecord::Schema.define(version: 20170912033045) do
 
   add_foreign_key "about_sections", "users"
   add_foreign_key "awards", "about_sections"
+  add_foreign_key "chef_sections", "users"
   add_foreign_key "examples", "users"
   add_foreign_key "histories", "about_sections"
   add_foreign_key "news_posts", "news_sections"

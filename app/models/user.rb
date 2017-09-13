@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_one :about_section
   has_one :news_section
   has_one :product_section
+  has_one :chef_section
   has_many :examples
 
 end

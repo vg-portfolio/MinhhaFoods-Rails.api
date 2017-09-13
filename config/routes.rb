@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+
   resources :ingredients
   resources :descriptions
 
@@ -9,6 +10,10 @@ Rails.application.routes.draw do
   end
 
   resources :product_categories
+
+  resources :chef_sections, except: [:new, :edit, :update]
+  patch '/chef_sections' => 'chef_sections#update'
+
   resources :product_sections, except: [:new, :edit, :update]
   patch '/product_sections' => 'product_sections#update'
 
