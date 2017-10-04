@@ -1,8 +1,8 @@
 #!/bin/bash
 
-TOKEN="BAhJIiU1NTEyOGE0ZTVkNjkzMDMxZDc4NGIxNzA5NGRjMTg5ZgY6BkVG--e31e175fe206b922fdecf1d002cd72aee0c058ef"
+TOKEN="BAhJIiU1MGE0ZWZiMjI1ZmEyMjc5ODc0NmM1NDY0NDQ5YWI0MQY6BkVG--57979fd42bfa05a90a712265814227960fddb764"
 ID="1"
-TEXT="Sweet"
+TEXT="Dry Food"
 DES="category description goes here"
 
 API="${API_ORIGIN:-http://localhost:4741}"
@@ -22,9 +22,9 @@ curl "${API}${URL_PATH}" \
 echo
 
 
-TOKEN="BAhJIiU1NTEyOGE0ZTVkNjkzMDMxZDc4NGIxNzA5NGRjMTg5ZgY6BkVG--e31e175fe206b922fdecf1d002cd72aee0c058ef"
+TOKEN="BAhJIiU1MGE0ZWZiMjI1ZmEyMjc5ODc0NmM1NDY0NDQ5YWI0MQY6BkVG--57979fd42bfa05a90a712265814227960fddb764"
 ID="1"
-TEXT="Vietnamese"
+TEXT="Asian"
 DES="category description goes here"
 
 API="${API_ORIGIN:-http://localhost:4741}"

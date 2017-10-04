@@ -54,6 +54,6 @@ class CategoriesController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def category_params
-      params.require(:category).permit(:catType, :catTypeVn, :description, :descriptionVn)
+      params.require(:category).permit(:cat_type, :cat_type_vn, :description, :description_vn)
     end
 end
