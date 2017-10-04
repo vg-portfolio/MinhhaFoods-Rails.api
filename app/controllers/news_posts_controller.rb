@@ -1,4 +1,4 @@
-class NewsPostsController < ApplicationController
+class NewsPostsController < OpenReadController
   before_action :set_news_post, only: [:show, :update, :destroy]
 
   # GET /news_posts
