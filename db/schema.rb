@@ -10,27 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171004053228) do
+ActiveRecord::Schema.define(version: 20171004055809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "about_sections", force: :cascade do |t|
-    t.text     "title",         null: false
-    t.text     "titleVn"
-    t.text     "description",   null: false
-    t.text     "descriptionVn"
-    t.integer  "user_id",       null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.text     "title",          null: false
+    t.text     "title_vn"
+    t.text     "description",    null: false
+    t.text     "description_vn"
+    t.integer  "user_id",        null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.index ["user_id"], name: "index_about_sections_on_user_id", unique: true, using: :btree
   end
 
   create_table "awards", force: :cascade do |t|
     t.text     "title",            null: false
-    t.text     "titleVn"
+    t.text     "title_vn"
     t.text     "description",      null: false
-    t.text     "descriptionVn"
+    t.text     "description_vn"
     t.integer  "about_section_id", null: false
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -50,37 +50,37 @@ ActiveRecord::Schema.define(version: 20171004053228) do
   end
 
   create_table "chef_sections", force: :cascade do |t|
-    t.text     "title",         null: false
-    t.text     "titleVn"
-    t.text     "description",   null: false
-    t.text     "descriptionVn"
-    t.integer  "user_id",       null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.text     "title",          null: false
+    t.text     "title_vn"
+    t.text     "description",    null: false
+    t.text     "description_vn"
+    t.integer  "user_id",        null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.index ["user_id"], name: "index_chef_sections_on_user_id", unique: true, using: :btree
   end
 
   create_table "contacts", force: :cascade do |t|
     t.text     "title"
-    t.text     "titleVn"
+    t.text     "title_vn"
     t.text     "description"
-    t.text     "descriptionVn"
-    t.text     "companyName"
+    t.text     "description_vn"
+    t.text     "company_name_vn"
     t.text     "companyNameVn"
     t.integer  "tel"
     t.integer  "hotline"
     t.integer  "fax"
     t.text     "addess"
-    t.text     "fbLink"
-    t.integer  "user_id",       null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.text     "fb_link"
+    t.integer  "user_id",         null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.index ["user_id"], name: "index_contacts_on_user_id", unique: true, using: :btree
   end
 
   create_table "descriptions", force: :cascade do |t|
     t.text     "body"
-    t.text     "bodyVn"
+    t.text     "body_vn"
     t.string   "describable_type"
     t.integer  "describable_id"
     t.datetime "created_at",       null: false
@@ -89,13 +89,13 @@ ActiveRecord::Schema.define(version: 20171004053228) do
   end
 
   create_table "dishes", force: :cascade do |t|
-    t.text     "title",       null: false
-    t.text     "titleVn"
-    t.date     "dishDate"
-    t.text     "youtubeLink"
-    t.integer  "category_id", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "title",        null: false
+    t.text     "title_vn"
+    t.date     "dish_date"
+    t.text     "youtube_link"
+    t.integer  "category_id",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.index ["category_id"], name: "index_dishes_on_category_id", using: :btree
   end
 
@@ -109,9 +109,9 @@ ActiveRecord::Schema.define(version: 20171004053228) do
 
   create_table "histories", force: :cascade do |t|
     t.text     "title",            null: false
-    t.text     "titleVn"
+    t.text     "title_vn"
     t.text     "description",      null: false
-    t.text     "descriptionVn"
+    t.text     "description_vn"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "about_section_id", null: false
@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(version: 20171004053228) do
 
   create_table "ingredients", force: :cascade do |t|
     t.text     "body"
-    t.text     "BodyVn"
+    t.text     "body_vn"
     t.string   "ingredientable_type"
     t.integer  "ingredientable_id"
     t.datetime "created_at",          null: false
@@ -129,8 +129,8 @@ ActiveRecord::Schema.define(version: 20171004053228) do
   end
 
   create_table "inquiries", force: :cascade do |t|
-    t.text     "firstName",                  null: false
-    t.text     "lastName",                   null: false
+    t.text     "first_name",                 null: false
+    t.text     "last_name",                  null: false
     t.text     "email",                      null: false
     t.text     "message"
     t.boolean  "seen",       default: false
@@ -141,10 +141,10 @@ ActiveRecord::Schema.define(version: 20171004053228) do
 
   create_table "news_posts", force: :cascade do |t|
     t.text     "title",           null: false
-    t.text     "titleVn"
+    t.text     "title_vn"
     t.text     "description",     null: false
-    t.text     "descriptionVn"
-    t.date     "newsDate"
+    t.text     "description_vn"
+    t.date     "news_date"
     t.integer  "news_section_id", null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -152,30 +152,30 @@ ActiveRecord::Schema.define(version: 20171004053228) do
   end
 
   create_table "news_sections", force: :cascade do |t|
-    t.text     "title",         null: false
-    t.text     "titleVn"
-    t.text     "description",   null: false
-    t.text     "descriptionVn"
-    t.integer  "user_id",       null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.text     "title",          null: false
+    t.text     "title_vn"
+    t.text     "description",    null: false
+    t.text     "description_vn"
+    t.integer  "user_id",        null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.index ["user_id"], name: "index_news_sections_on_user_id", unique: true, using: :btree
   end
 
   create_table "product_sections", force: :cascade do |t|
-    t.text     "title",         null: false
-    t.text     "titleVn"
-    t.text     "description",   null: false
-    t.text     "descriptionVn"
-    t.integer  "user_id",       null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.text     "title",          null: false
+    t.text     "title_vn"
+    t.text     "description",    null: false
+    t.text     "description_vn"
+    t.integer  "user_id",        null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.index ["user_id"], name: "index_product_sections_on_user_id", unique: true, using: :btree
   end
 
   create_table "products", force: :cascade do |t|
     t.text     "title",       null: false
-    t.text     "titleVn"
+    t.text     "title_vn"
     t.integer  "volume"
     t.boolean  "metric"
     t.datetime "created_at",  null: false
@@ -196,9 +196,9 @@ ActiveRecord::Schema.define(version: 20171004053228) do
 
   create_table "why_us", force: :cascade do |t|
     t.text     "title",            null: false
-    t.text     "titleVn"
+    t.text     "title_vn"
     t.text     "description",      null: false
-    t.text     "descriptionVn"
+    t.text     "description_vn"
     t.integer  "about_section_id", null: false
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
