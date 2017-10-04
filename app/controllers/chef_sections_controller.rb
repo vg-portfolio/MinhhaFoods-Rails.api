@@ -45,6 +45,6 @@ class ChefSectionsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def chef_section_params
-      params.require(:chef_section).permit(:title, :titleVn, :description, :descriptionVn)
+      params.require(:chef_section).permit(:title, :title_vn, :description, :description_vn)
     end
 end

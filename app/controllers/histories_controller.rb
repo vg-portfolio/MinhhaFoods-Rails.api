@@ -48,6 +48,6 @@ class HistoriesController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def history_params
-      params.require(:history).permit(:title, :titleVn, :description, :descriptionVn)
+      params.require(:history).permit(:title, :title_vn, :description, :description_vn)
     end
 end

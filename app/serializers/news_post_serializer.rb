@@ -1,3 +1,3 @@
 class NewsPostSerializer < ActiveModel::Serializer
-  attributes :id, :title, :titleVn, :description, :descriptionVn, :newsDate
+  attributes :id, :title, :title_vn, :description, :description_vn, :newsDate
 end

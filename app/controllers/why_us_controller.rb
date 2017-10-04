@@ -47,6 +47,6 @@ class WhyUsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def why_u_params
-      params.require(:why_us).permit(:title, :titleVn, :description, :descriptionVn)
+      params.require(:why_us).permit(:title, :title_vn, :description, :description_vn)
     end
 end

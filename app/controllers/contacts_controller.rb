@@ -46,6 +46,6 @@ class ContactsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def contact_params
-      params.require(:contact).permit(:title, :titleVn, :description, :descriptionVn, :companyName, :companyNameVn, :tel, :hotline, :fax, :addess, :fbLink)
+      params.require(:contact).permit(:title, :title_vn, :description, :description_vn, :companyName, :companyNameVn, :tel, :hotline, :fax, :addess, :fbLink)
     end
 end

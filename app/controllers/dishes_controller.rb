@@ -46,6 +46,6 @@ class DishesController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def dish_params
-      params.require(:dish).permit(:title, :titleVn, :dishDate, :youtubeLink, :category_id)
+      params.require(:dish).permit(:title, :title_vn, :dishDate, :youtubeLink, :category_id)
     end
 end

@@ -1,3 +1,3 @@
 class InquirySerializer < ActiveModel::Serializer
-  attributes :id, :firstName, :lastName, :email, :message, :seen
+  attributes :id, :first_name, :last_name, :email, :message, :seen
 end

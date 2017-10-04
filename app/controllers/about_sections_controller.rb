@@ -47,6 +47,6 @@ class AboutSectionsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def about_section_params
-      params.require(:about_sections).permit(:title, :titleVn, :description, :descriptionVn)
+      params.require(:about_sections).permit(:title, :title_vn, :description, :description_vn)
     end
 end
