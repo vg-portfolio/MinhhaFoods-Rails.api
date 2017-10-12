@@ -1,8 +1,8 @@
 #!/bin/bash
 
-TOKEN="BAhJIiU1MGE0ZWZiMjI1ZmEyMjc5ODc0NmM1NDY0NDQ5YWI0MQY6BkVG--57979fd42bfa05a90a712265814227960fddb764"
+TOKEN="BAhJIiU5NmU0MzkwZTc1MjEyM2YzMTA2YTczOGYyNDdhNmNhNAY6BkVG--303000b813c3902ab1ff36aeb2408caf349e835b"
 ID="1"
-TEXT="Dry Food"
+TEXT="Smelly"
 DES="category description goes here"
 
 API="${API_ORIGIN:-http://localhost:4741}"
@@ -14,7 +14,7 @@ curl "${API}${URL_PATH}" \
   --header "Authorization: Token token=$TOKEN" \
   --data '{
     "category": {
-      "catType": "'"${TEXT}"'",
+      "cat_type": "'"${TEXT}"'",
       "description": "'"${DES}"'"
     }
   }'

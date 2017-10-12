@@ -8,14 +8,12 @@ Rails.application.routes.draw do
     resources :categories
   end
   patch '/product_sections' => 'product_sections#update'
-###### END Product Section #######
 
 ###### Chef Section #######
   resources :chef_sections, except: [:new, :edit, :update] do
     resources :categories
   end
   patch '/chef_sections' => 'chef_sections#update'
-###### END Chef Section #######
 
 ###### Categories #######
   resources :categories do
@@ -24,7 +22,6 @@ Rails.application.routes.draw do
     #POST@ /categories/${ID}/dishes
     resources :dishes, only: [:create]
   end
-###### END Categories Section #######
 
 ###### Dish #######
   resources :dishes do
@@ -33,7 +30,6 @@ Rails.application.routes.draw do
     #POST@ /dishes/1/ingredients
     resources :ingredients, only: [:create]
   end
-###### END dish Section #######
 
 ###### polymorphic #######
     resources :ingredients, except: [:create]

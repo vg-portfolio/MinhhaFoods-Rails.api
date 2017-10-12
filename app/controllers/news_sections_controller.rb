@@ -9,9 +9,9 @@ class NewsSectionsController < OpenReadController
   end
 
   # GET /news_sections/1
-  # def show
-  #   render json: @news_section
-  # end
+  def show
+    render json: @news_section
+  end
 
   # POST /news_sections
   def create

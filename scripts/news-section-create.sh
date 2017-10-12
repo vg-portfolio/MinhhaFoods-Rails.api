@@ -1,7 +1,7 @@
 #!/bin/bash
 
-TOKEN="BAhJIiVjNjRhYTAxZmRhN2I4NWFjZTUyOGI0Zjk2ODdjOTdkZAY6BkVG--0cfa4bc4b3a055aff49f06702ebbf5021cd8f772"
-TEXT="News"
+TOKEN="BAhJIiU2MmJkYmVjODEzNjZlM2VhNzE4ODE4Y2MxYTM2YWZiYgY6BkVG--b8f5eea0e7797dfa942b33ca42eef5db2a43869c"
+TEXT="Latest News"
 DES="News section description goes here"
 
 API="${API_ORIGIN:-http://localhost:4741}"

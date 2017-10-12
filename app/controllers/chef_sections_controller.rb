@@ -40,7 +40,7 @@ class ChefSectionsController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_chef_section
-      @chef_section = ChefSection.find(params[:id])
+      @chef_section = ChefSection.first
     end
 
     # Only allow a trusted parameter "white list" through.
