@@ -1,8 +1,8 @@
 #!/bin/bash
 
-TOKEN="BAhJIiVjNjRhYTAxZmRhN2I4NWFjZTUyOGI0Zjk2ODdjOTdkZAY6BkVG--0cfa4bc4b3a055aff49f06702ebbf5021cd8f772"
+TOKEN="BAhJIiU1MTQ0ZjU0YmVjNjBiNjI2N2NkNDA0ZGE1NTcwMzIwYQY6BkVG--e3211a38b7cb5f574fb7844f68f3541eea51d8ea"
 TEXT="WHYYY THOOOO"
-DES="Why description goes here"
+DES="Sit labore id nulla tempor proident tempor id deserunt. Sit labore id nulla tempor proident tempor id deserunt. Sit labore id nulla tempor proident tempor id deserunt."
 
 API="${API_ORIGIN:-http://localhost:4741}"
 URL_PATH="/why_us"

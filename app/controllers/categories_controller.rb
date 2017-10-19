@@ -1,6 +1,6 @@
 class CategoriesController < OpenReadController
   before_action :set_category, only: [:show, :update, :destroy]
-  before_action :set_categorizable, only: [:create]
+  # before_action :set_categorizable, only: [:create]
   # GET /categories
   def index
     @categories = Category.all
@@ -15,8 +15,8 @@ class CategoriesController < OpenReadController
 
   # POST /categories
   def create
-    @category = @categorizable.categories.build(category_params)
-
+    # @category = @categorizable.categories.build(category_params)
+    @category = Category.new(category_params)
     if @category.save
       render json: @category, status: :created, location: @category
     else
@@ -54,6 +54,6 @@ class CategoriesController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def category_params
-      params.require(:category).permit(:cat_type, :cat_type_vn, :description, :description_vn)
+      params.require(:category).permit(:cat_type, :cat_type_vn, :description, :description_vn, :categorizable_id, :categorizable_type)
     end
 end

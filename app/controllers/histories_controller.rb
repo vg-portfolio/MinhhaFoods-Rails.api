@@ -43,7 +43,7 @@ class HistoriesController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_history
-      @history = History.first
+      @history = History.find(1)
     end
 
     # Only allow a trusted parameter "white list" through.

@@ -1,9 +1,7 @@
 #!/bin/bash
 
-TOKEN="BAhJIiU2MmJkYmVjODEzNjZlM2VhNzE4ODE4Y2MxYTM2YWZiYgY6BkVG--b8f5eea0e7797dfa942b33ca42eef5db2a43869c"
-TEXT="Minh Ha Foods"
-HOT="0837655229"
-TEL="0837652193"
+TOKEN="BAhJIiU2MDBlNzcyNGEyOWI5MjVmZWI2ZDkzYmYyYWYwNzdiMAY6BkVG--cd098375f377e23b937b5ed2ca686f351e583691"
+TEXT="Lsdaskdjaskljd alskjdlaskjd lkasjdkasjdlkasd asdas dasdka snd,amsnd ansdasjn djkasdnkj asndasn dlasknd lkasndl kasndasjkdna sjkndaskjndasjdn jkasnd jka"
 ID="1"
 
 API="${API_ORIGIN:-http://localhost:4741}"
@@ -15,9 +13,7 @@ curl "${API}${URL_PATH}/${ID}" \
   --header "Authorization: Token token=$TOKEN" \
   --data '{
     "contact": {
-      "company_name": "'"${TEXT}"'",
-      "hotline": "'"${HOT}"'",
-      "tel": "'"${TEL}"'"
+      "description": "'"${TEXT}"'"
     }
   }'
 

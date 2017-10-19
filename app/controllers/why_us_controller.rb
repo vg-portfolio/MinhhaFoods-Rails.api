@@ -42,11 +42,11 @@ class WhyUsController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_why_u
-      @why_u = WhyU.first
+      @why_u = WhyU.find(1)
     end
 
     # Only allow a trusted parameter "white list" through.
     def why_u_params
-      params.require(:why_us).permit(:title, :title_vn, :description, :description_vn)
+      params.require(:why_u).permit(:title, :title_vn, :description, :description_vn)
     end
 end

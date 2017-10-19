@@ -4,10 +4,9 @@ Rails.application.routes.draw do
   resources :inquiries
   resources :contacts
 ###### Product Section #######
-  resources :product_sections, except: [:new, :edit, :update] do
+  resources :product_sections, except: [:new, :edit] do
     resources :categories
   end
-  patch '/product_sections' => 'product_sections#update'
 
 ###### Chef Section #######
   resources :chef_sections, except: [:new, :edit, :update] do
@@ -16,11 +15,12 @@ Rails.application.routes.draw do
   patch '/chef_sections' => 'chef_sections#update'
 
 ###### Categories #######
-  resources :categories do
+
+  resources :categories, except: [:new, :edit] do
     #POST@ /categories/${ID}/products
-    resources :products, only: [:create]
+    # resources :products, only: [:create]
     #POST@ /categories/${ID}/dishes
-    resources :dishes, only: [:create]
+    # resources :dishes, only: [:create]
   end
 
 ###### Dish #######
@@ -46,14 +46,11 @@ Rails.application.routes.draw do
 ###### END products #######
 
 ###### About Section #######
-  resources :about_sections, except: [:new, :edit, :update]
-  patch '/about_sections' => 'about_sections#update'
+  resources :about_sections, except: [:new, :edit]
 
-  resources :histories, except: [:new, :edit, :update]
-  patch '/histories' => 'histories#update'
+  resources :histories, except: [:new, :edit]
 
-  resources :why_us, except: [:new, :edit, :update]
-  patch '/why_us' => 'why_us#update'
+  resources :why_us, except: [:new, :edit]
 
   resources :awards, except: [:new, :edit]
 ###### END About Section #######
