@@ -19,11 +19,13 @@ about = AboutSection.create({
 
 history = History.create({
   title: 'History',
-  about: about })
+  description: 'asdasd asd asd asdas dasd',
+  about_section: about })
 
 why = WhyU.create({
     title: 'Why Us',
-    about: about })
+    description: 'asdasd asd asd asdas dasd',
+    about_section: about })
 
 
 productSec = ProductSection.create({
