@@ -47,6 +47,6 @@ class AwardsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def award_params
-      params.require(:award).permit(:title, :title_vn, :description, :description_vn)
+      params.require(:award).permit(:title, :title_vn, :description, :description_vn, :image_url)
     end
 end

@@ -21,9 +21,9 @@ curl "${API}${URL_PATH}" \
 echo
 
 
-TOKEN="BAhJIiU1NTEyOGE0ZTVkNjkzMDMxZDc4NGIxNzA5NGRjMTg5ZgY6BkVG--e31e175fe206b922fdecf1d002cd72aee0c058ef"
-TEXT="Dish 2"
-ID="16"
+TOKEN="BAhJIiU2YzI3OGIyNjM4MDRjYTg3NDE5NjM1NDA1ZWQyMGY0ZgY6BkVG--cc4890a30119346e5880d043566b81940a2ad644"
+TEXT="Dish 1"
+ID="1"
 
 API="${API_ORIGIN:-http://localhost:4741}"
 URL_PATH="/dishes"
@@ -35,7 +35,7 @@ curl "${API}${URL_PATH}" \
   --data '{
     "dish": {
       "title": "'"${TEXT}"'",
-      "category_id": "'"${ID}"'"
+      "chef_category_id": "'"${ID}"'"
     }
   }'
 

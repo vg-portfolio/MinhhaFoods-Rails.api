@@ -5,7 +5,7 @@ class DishesController < OpenReadController
   def index
     @dishes = Dish.all
 
-    render json: @dishes.includes([:ingredients, :descriptions]), include: ['ingredients', 'descriptions']
+    render json: @dishes
   end
 
   # GET /dishes/1
@@ -46,6 +46,6 @@ class DishesController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def dish_params
-      params.require(:dish).permit(:title, :title_vn, :dishDate, :youtubeLink, :category_id)
+      params.require(:dish).permit(:title, :title_vn, :details, :details_vn, :youtube_link, :image_url, :chef_category_id)
     end
 end

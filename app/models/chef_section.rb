@@ -1,5 +1,5 @@
 class ChefSection < ApplicationRecord
   belongs_to :user
 
-  has_many :categories, as: :categorizable
+  has_many :chef_categories
 end

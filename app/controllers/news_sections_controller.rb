@@ -46,6 +46,6 @@ class NewsSectionsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def news_section_params
-      params.require(:news_section).permit(:title, :title_vn, :description, :description_vn)
+      params.require(:news_section).permit(:title, :title_vn, :description, :description_vn, :image_url)
     end
 end

@@ -5,7 +5,7 @@ class ProductsController < OpenReadController
   def index
     @products = Product.all
 
-    render json: @products.includes([:ingredients, :descriptions]), include: ['ingredients', 'descriptions']
+    render json: @products
   end
 
   # GET /products/1
@@ -46,6 +46,6 @@ class ProductsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def product_params
-      params.require(:product).permit(:title, :title_vn, :volume, :metric, :category_id)
+      params.require(:product).permit(:title, :title_vn, :volume, :metric, :details, :details_vn, :image_url, :product_category_id)
     end
 end

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TOKEN="BAhJIiU1MGE0ZWZiMjI1ZmEyMjc5ODc0NmM1NDY0NDQ5YWI0MQY6BkVG--57979fd42bfa05a90a712265814227960fddb764"
+TOKEN="BAhJIiU3NGMxZDUxNzAxMGFiYjQ2NmU3Y2JkZGNhNzk1OTU2MAY6BkVG--78216e926124bb59ca36415e182d61d56917ea39"
 TEXT="Awards #4"
 DES="Awards description goes here"
 
@@ -12,7 +12,7 @@ curl "${API}${URL_PATH}" \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=$TOKEN" \
   --data '{
-    "awards": {
+    "award": {
       "title": "'"${TEXT}"'",
       "titleVn": "'"${TVN}"'",
       "description": "'"${DES}"'",

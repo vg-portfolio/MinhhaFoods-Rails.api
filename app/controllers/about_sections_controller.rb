@@ -47,6 +47,7 @@ class AboutSectionsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def about_section_params
-      params.require(:about_section).permit(:title, :title_vn, :description, :description_vn)
+      # ActiveModelSerializers::Deserialization.jsonapi_parse(params, only: [:title, :title_vn, :description, :description_vn])
+      params.require(:about_section).permit(:title, :title_vn, :description, :description_vn, :image_url, :image_url2, :image_url3)
     end
 end

@@ -5,7 +5,7 @@ class CategoriesController < OpenReadController
   def index
     @categories = Category.all
 
-    render json: @categories.includes([:products, :dishes]), include: ['products', 'dishes']
+    render json: @categories
   end
 
   # GET /categories/1

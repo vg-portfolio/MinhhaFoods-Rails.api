@@ -1,18 +1,17 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
 
+  resources :dishes
+  resources :products
+  resources :chef_categories
+  resources :product_categories
   resources :inquiries
   resources :contacts
 ###### Product Section #######
-  resources :product_sections, except: [:new, :edit] do
-    resources :categories
-  end
+  resources :product_sections, except: [:new, :edit]
 
 ###### Chef Section #######
-  resources :chef_sections, except: [:new, :edit, :update] do
-    resources :categories
-  end
-  patch '/chef_sections' => 'chef_sections#update'
+  resources :chef_sections, except: [:new, :edit]
 
 ###### Categories #######
 
@@ -56,8 +55,7 @@ Rails.application.routes.draw do
 ###### END About Section #######
 
 ###### News Section #######
-  resources :news_sections, except: [:new, :edit, :update]
-  patch '/news_sections' => 'news_sections#update'
+  resources :news_sections, except: [:new, :edit]
 
   resources :news_posts, except: [:new, :edit]
 ###### END News Section #######
