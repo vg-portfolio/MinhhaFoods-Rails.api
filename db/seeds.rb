@@ -8,14 +8,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-# user = User.create({
-#   email: 'dummy',
-#   password: 'qwer' })
-#
-# about = AboutSection.create({
-#   user: user,
-#   title: 'About Us',
-#   description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to' })
+user = User.create({
+  email: 'admin',
+  password: 'qwer' })
+
+about = AboutSection.create({
+  user: user,
+  title: 'About Us',
+  description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to' })
 
 history = History.create({
   title: 'History',
@@ -27,26 +27,28 @@ why = WhyU.create({
     description: 'asdasd asd asd asdas dasd',
     about_section: about })
 
+award = Award.create({
+  title: "award 1",
+  description: "details here",
+  about_section: about
+  })
 
-# productSec = ProductSection.create({
-#   user: user,
-#   title: 'Products',
-#   description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to' })
-#
-# chefSection = ChefSection.create({
-#   user: user,
-#   title: 'Chef',
-#   description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to' })
-#
-# newsSec = NewsSection.create({
-#   user: user,
-#   title: 'News',
-#   description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to' })
-#
-# contact = Contact.create({
-#   user: user,
-#   title: 'Get in touch with us',
-#   description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as op' })
-# history = History.create({
-#   title: 'History',
-#   description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters' })
+productSec = ProductSection.create({
+  user: user,
+  title: 'Products',
+  description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to' })
+
+chefSection = ChefSection.create({
+  user: user,
+  title: 'Chef',
+  description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to' })
+
+newsSec = NewsSection.create({
+  user: user,
+  title: 'News',
+  description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to' })
+
+contact = Contact.create({
+  user: user,
+  title: 'Get in touch with us',
+  description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as op' })
