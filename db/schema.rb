@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171112035712) do
+ActiveRecord::Schema.define(version: 20171114015105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(version: 20171112035712) do
     t.integer  "news_section_id", null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.text     "image_url"
     t.index ["news_section_id"], name: "index_news_posts_on_news_section_id", using: :btree
   end
 
