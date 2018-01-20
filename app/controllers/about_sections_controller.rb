@@ -9,9 +9,9 @@ class AboutSectionsController < OpenReadController
   end
 
   # GET /about_sections/1
-  # def show
-  #   render json: @about_section
-  # end
+  def show
+    render json: @about_section
+  end
 
   # POST /about_sections
   def create
