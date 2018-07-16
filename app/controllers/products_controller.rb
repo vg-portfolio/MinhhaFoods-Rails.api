@@ -46,6 +46,6 @@ class ProductsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def product_params
-      params.require(:product).permit(:title, :title_vn, :volume, :metric, :details, :details_vn, :image_url, :product_category_id)
+      params.require(:product).permit(:title, :title_vn, :volume, :metric, :details, :details_vn, :image_url, :image_url2, :image_url3, :image_url4, :product_category_id)
     end
 end
